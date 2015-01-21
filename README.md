@@ -1,4 +1,4 @@
-### Data Science – John Hopkins University
+# Data Science – John Hopkins University
 
 **A Sequence of Courses: Learn to be a Data Scientist and Apply Your Skills in a Capstone Project**
 
