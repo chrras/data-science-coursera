@@ -1,15 +1,15 @@
-### Course Description
+# Course Description
 
 In this course you will learn how to program in R and how to use R for effective data analysis. You will learn how to install and configure software necessary for a statistical programming environment, discuss generic programming language concepts as they are implemented in a high-level statistical language. The course covers practical issues in statistical computing which includes programming in R, reading data into R, accessing R packages, writing R functions, debugging, and organizing and commenting R code. Topics in statistical data analysis and optimization will provide working examples.
 
-### Course Content
+# Course Content
 
 * Week 1: Overview of R, R data types and objects, reading and writing data
 * Week 2: Control structures, functions, scoping rules, dates and times
 * Week 3: Loop functions, debugging tools
 * Week 4: Simulation, code profiling
 
-### Lecture Materials
+# Lecture Materials
 
 Lecture videos will be released weekly and will be available for the week and thereafter. You are welcome to view them at your convenience. Accompanying each video lecture will be a PDF copy of the slides and a link to an HTML5 version of the slides.
 
@@ -17,7 +17,7 @@ Lecture videos will be released weekly and will be available for the week and th
 
 Background lectures about the content of the course with respect to other quantitative courses, course logistics, and the R programming language are provided as reference material. It is not necessary to watch the videos to complete the course, however you may find them useful.
 
-### Assessments
+# Assessments
 
 ## Quizzes
 
@@ -41,7 +41,7 @@ Each lesson that you complete in swirl is worth one extra credit point. However,
 
 You can find the instructions for how to install and use swirl in the Programming Assignments section of the course under Week 1.
 
-### Grading
+# Grading
 
 ## Quizzes
 
