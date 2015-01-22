@@ -28,7 +28,7 @@ best <- function(state, outcome) {
         
         ## Find minimum rate
         
-        minRate <- which.min(as.numeric(data[, col]))
+        suppressWarnings(minRate <- which.min(as.numeric(data[, col])))
         
         ## Return hospital name in that state with lowest 30-day death rate
         
