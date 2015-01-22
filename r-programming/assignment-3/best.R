@@ -1,11 +1,11 @@
 best <- function(state, outcome) {
-        data <- read.csv("outcome-of-care-measures.csv",
+        data <- read.csv("data/outcome-of-care-measures.csv",
                          colClasses = "character")
         
         ## Check that state and outcome are valid
         
         if (!is.element(state, data$State)) {
-                stop('Undefined state name')
+                stop('invalid state')
         }
         
         outcomeVec <- c('11' = 'heart attack',
@@ -13,7 +13,7 @@ best <- function(state, outcome) {
                         '23' = 'pneumonia')
         
         if (!is.element(outcome, outcomeVec)) {
-                stop('Undefined outcome')
+                stop('invalid outcome')
         }
         
         ## Find outcome collumn number
@@ -34,5 +34,3 @@ best <- function(state, outcome) {
         
         data[minRate, 2]
 }
-
-best('AL', 'pneumonia')
