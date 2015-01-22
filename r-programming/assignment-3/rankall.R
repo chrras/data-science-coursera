@@ -38,7 +38,7 @@ rankall <- function(outcome, num = "best") {
         states <- unique(data$State)
         stateIdx <- match(states, data$State)
         
-        if (!is.na(as.numeric(num))) {
+        if (suppressWarnings(!is.na(as.numeric(num)))) {
                 maxIdx <- c(stateIdx[-1], nrow(data)) - 1
                 stateIdx <- stateIdx + (num-1)
                 insideBounds <- stateIdx <= maxIdx
@@ -48,4 +48,7 @@ rankall <- function(outcome, num = "best") {
         hospital <- data[stateIdx, 2]
         
         df <- data.frame(hospital, states)
+        colnames(df) <- c('hospital', 'state')
+        
+        return(df)
 }
