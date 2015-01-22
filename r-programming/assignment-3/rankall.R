@@ -7,9 +7,9 @@ rankall <- function(outcome, num = "best") {
         
         ## Check that state and outcome are valid
         
-        if (!is.element(state, data$State)) {
-                stop('invalid state')
-        }
+#         if (!is.element(state, data$State)) {
+#                 stop('invalid state')
+#         }
         
         outcomeVec <- c('11' = 'heart attack',
                         '17' = 'heart failure',
@@ -23,18 +23,34 @@ rankall <- function(outcome, num = "best") {
         
         idx <- match(outcome, outcomeVec)
         col <- as.integer(names(outcomeVec[idx]))
-        
-        #states <- unique(data$State)
-        
+
         ## Subset and sort data
         
         suppressWarnings(data[, col] <- as.numeric(data[, col]))
         data <- data[!is.na(data[, col]), ]
-        minRates <- tapply(data[, col], data$State, which.min)
         
-        df <- data[minRates, c(2, 7)]
-        colnames(df) <- c('hospital', 'state')
+        ## Sort
         
+        if (num != 'worst') {
+                data <- data[order(data[, 7], -data[, col]), ]
+        } else {
+                data <- data[order(data[, 7], data[, col]), ]
+        }
+        
+        states <- unique(data$State)
+        
+
+#         stateIdx <- match(states, data$State)
+#         
+#         if (!is.na(as.numeric(num))) {
+#                 stateIdx <- stateIdx + (num-1)
+#         }
+#         
+#         #minRates <- tapply(data[, col], data$State, which.min)
+#         
+#         df <- data[stateIdx, c(2, 7)]
+#         colnames(df) <- c('hospital', 'state')
+#         return(df)
         for (state in states) {
                 dataSub <- subset(data, State == state)
                 suppressWarnings(dataSub[, col] <- as.numeric(dataSub[, col]))
@@ -65,6 +81,8 @@ rankall <- function(outcome, num = "best") {
         ## Return a data frame with the hospital names and the
         ## (abbreviated) state name
 }
+
+head(rankall("heart attack", 20), 10)
 
 ?tapply
 suppressWarnings(tapply(data[, col], data$State, which.min))
