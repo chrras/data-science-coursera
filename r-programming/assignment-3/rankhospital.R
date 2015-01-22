@@ -21,17 +21,15 @@ rankhospital <- function(state, outcome, num = "best") {
         
         ## Find outcome collumn number
         
-        # idx <- match(outcome, outcomeVec)
         idx <- match(outcome, outcomeVec)
         col <- as.integer(names(outcomeVec[idx]))
         
         ## Subset and sort data
         
-        data <- subset(data, State == state)    ## Subset
-        data[, col] <- as.numeric(data[, col])  ## Convert outcome to numeric
-        data <- data[!is.na(data[, col]), ]     ## Remove NAs
-        data <- data[order(data[, col], data$Hospital.Name), ]  ## Sort data (lo -> hi)
-        # data <- data[order(data[, col]), ]  ## Sort data (lo -> hi)
+        data <- subset(data, State == state)
+        suppressWarnings(data[, col] <- as.numeric(data[, col]))
+        data <- data[!is.na(data[, col]), ]            ## Remove NAs
+        data <- data[order(data[, col], data[, 2]), ]  ## Sort data (lo -> hi)
         
         if (num == 'best') {
                 return(data[1, 2])
