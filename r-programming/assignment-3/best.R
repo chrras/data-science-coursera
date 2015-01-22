@@ -16,16 +16,23 @@ best <- function(state, outcome) {
                 stop('Undefined outcome')
         }
         
-        idx <- match('heart attack', outcomeVec)
+        ## Find outcome collumn number
+        
+        idx <- match(outcome, outcomeVec)
         col <- as.integer(names(outcomeVec[idx]))
         
-        stateVec <- subset(data, State == state)
+        ## Subset and sort data
+        
+        data <- subset(data, State == state)
+        data <- data[order(data$Hospital.Name), ]
+        
+        ## Find minimum rate
+        
+        minRate <- which.min(as.numeric(data[, col]))
         
         ## Return hospital name in that state with lowest 30-day death rate
         
-        
+        data[minRate, 2]
 }
 
-best('ALL')
-exists('AL', data)
-is.element('AL', data$State)
+best('AL', 'pneumonia')
