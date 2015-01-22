@@ -7,10 +7,6 @@ rankall <- function(outcome, num = "best") {
         
         ## Check that state and outcome are valid
         
-#         if (!is.element(state, data$State)) {
-#                 stop('invalid state')
-#         }
-        
         outcomeVec <- c('11' = 'heart attack',
                         '17' = 'heart failure',
                         '23' = 'pneumonia')
@@ -31,58 +27,25 @@ rankall <- function(outcome, num = "best") {
         
         ## Sort
         
-        if (num != 'worst') {
+        if (num == 'worst') {
                 data <- data[order(data[, 7], -data[, col]), ]
         } else {
                 data <- data[order(data[, 7], data[, col]), ]
         }
         
+        ## Find states and hospitals
+        
         states <- unique(data$State)
+        stateIdx <- match(states, data$State)
         
-
-#         stateIdx <- match(states, data$State)
-#         
-#         if (!is.na(as.numeric(num))) {
-#                 stateIdx <- stateIdx + (num-1)
-#         }
-#         
-#         #minRates <- tapply(data[, col], data$State, which.min)
-#         
-#         df <- data[stateIdx, c(2, 7)]
-#         colnames(df) <- c('hospital', 'state')
-#         return(df)
-        for (state in states) {
-                dataSub <- subset(data, State == state)
-                suppressWarnings(dataSub[, col] <- as.numeric(dataSub[, col]))
-                dataSub <- dataSub[!is.na(dataSub[, col]), ]
-                dataSub <- dataSub[order(dataSub[, col], dataSub[, 2]), ]
-        
-                if (num == 'best') {
-                        return(data[1, 2])
-                } else if (num == 'worst') {
-                        return(tail(data[, 2], 1))
-                } else {
-                        return(data[num, 2])
-                }
+        if (!is.na(as.numeric(num))) {
+                maxIdx <- c(stateIdx[-1], nrow(data)) - 1
+                stateIdx <- stateIdx + (num-1)
+                insideBounds <- stateIdx <= maxIdx
+                stateIdx <- ifelse(insideBounds == TRUE, stateIdx, NA)
         }
         
+        hospital <- data[stateIdx, 2]
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        ## For each state, find the hospital of the given rank
-        ## Return a data frame with the hospital names and the
-        ## (abbreviated) state name
+        df <- data.frame(hospital, states)
 }
-
-head(rankall("heart attack", 20), 10)
-
-?tapply
-suppressWarnings(tapply(data[, col], data$State, which.min))
