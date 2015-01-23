@@ -28,7 +28,7 @@ rankall <- function(outcome, num = "best") {
         ## Sort
         
         if (num == 'worst') {
-                data <- data[order(data[, 7], -data[, col]), ]
+                data <- data[order(data[, 7], rev(data[, col])), ]
         } else {
                 data <- data[order(data[, 7], data[, col]), ]
         }
