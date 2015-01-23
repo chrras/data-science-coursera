@@ -20,9 +20,11 @@ rankall <- function(outcome, num = "best") {
         idx <- match(outcome, outcomeVec)
         col <- as.integer(names(outcomeVec[idx]))
 
-        ## Subset and sort data
+        ## Convert outcome collumn to numeric and removeing NAs
         
+        states <- unique(data$State)
         suppressWarnings(data[, col] <- as.numeric(data[, col]))
+        data <- data[!is.na(data[, col]), ]
         
         ## Sort
         
@@ -32,12 +34,8 @@ rankall <- function(outcome, num = "best") {
                 data <- data[order(data[, 7], data[, col], data[, 2]), ]
         }
         
-        states <- unique(data$State)
-        data <- data[!is.na(data[, col]), ]
+        ## Create data frame
         
-        
-        ## Find states and hospitals
-
         df <- NULL
         
         if (num == 'best' | num == 'worst') {
