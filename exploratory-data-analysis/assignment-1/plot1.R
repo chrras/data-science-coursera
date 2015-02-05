@@ -9,9 +9,17 @@ source('load_data.R')
 
 data <- load_data()  # See the load_data.R file for details
 
+
+## Create directory 'plots' if it doesn't exists ----
+
+if(!file.exists('plots')) {
+    dir.create('plots')
+}
+
+
 ## Create histogram ----
 
-png('plot1.png')
+png('plots/plot1.png')
 
 hist(data$Global_active_power,
      main = 'Global Active Power',
