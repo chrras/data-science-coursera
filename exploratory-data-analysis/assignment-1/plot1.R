@@ -19,7 +19,10 @@ if(!file.exists('plots')) {
 
 ## Create histogram ----
 
-png('plots/plot1.png')
+png('plots/plot1.png',
+    width = 480,
+    height = 480,
+    units = "px")
 
 hist(data$Global_active_power,
      main = 'Global Active Power',
