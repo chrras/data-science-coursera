@@ -51,5 +51,6 @@ load_data <- function(path = paste('/Users/Christoffer/data-science-coursera/',
     powerComsumption$Time <- strptime(powerComsumption$Time, format = "%H:%M:%S")
     powerComsumption$Time <- strftime(powerComsumption$Time, "%H:%M:%S")
     
+    setwd('..')
     return(powerComsumption)
 }
