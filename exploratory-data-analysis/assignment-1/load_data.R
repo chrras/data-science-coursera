@@ -1,37 +1,37 @@
-load_data <- function(path = paste('/Users/Christoffer/data-science-coursera/',
-                      'exploratory-data-analysis/assignment-1', sep = "")) {
-        
+load_data <- function(path = paste0('/Users/Christoffer/data-science-coursera/',
+                                    'exploratory-data-analysis/assignment-1')) {
+    
     setwd(path)
     
+    ## Create folder for data
     if (!file.exists('data-gitignore')) {
-            dir.create('data-gitignore')
-            setwd('./data-gitignore')
+        dir.create('data-gitignore')
+        setwd('./data-gitignore')
     }
-
+    
     setwd('./data-gitignore')
     
     if (!file.exists('household_power_consumption_subset.txt')) {
         
         ## Downloading and unzipping data
         if (!file.exists('household_power_consumption.txt')) {
-            download.file(paste('https://d396qusza40orc.cloudfront.net/',
-                                'exdata%2Fdata%2Fhousehold_power_',
-                                'consumption.zip', sep = ""),
+            download.file(paste0('https://d396qusza40orc.cloudfront.net/',
+                                 'exdata%2Fdata%2Fhousehold_power_',
+                                 'consumption.zip'),
                           destfile = 'household_power_consumption.zip',
                           method = 'curl')
-        
+            
             unzip('household_power_consumption.zip')
         }
         
         ## Create header in new subset file via Terminal (Mac)
-        system(paste("head -n 1 household_power_consumption.txt",
-                     "> household_power_consumption_subset.txt",
-                     sep = ""))
+        system(paste0("head -n 1 household_power_consumption.txt",
+                      "> household_power_consumption_subset.txt"))
         
         ## Append lines with the right date via Terminal (Mac)
-        system(paste("grep ^[1-2]/2/2007 household_power_",
-                     "consumption.txt >> household_power_",
-                     "consumption_subset.txt", sep = ""))
+        system(paste0("grep ^[1-2]/2/2007 household_power_",
+                      "consumption.txt >> household_power_",
+                      "consumption_subset.txt"))
     }
     
     ## Load and format data
