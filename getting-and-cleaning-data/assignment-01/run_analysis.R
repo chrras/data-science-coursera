@@ -25,8 +25,9 @@ run_analysis <- function() {
     colnames(data) <- c('subject', 'activity', 'case', header[, 2])
 
     ## Extracts collumn names ending on 'mean()' or 'std()'
-    data <- cbind(data[, 1:3], data[, grepl('mean()', colnames(data), fixed = TRUE) |
-                     grepl('std()', colnames(data), fixed = TRUE)])
+    data <- cbind(data[, 1:3],
+                  data[, grepl('mean()', colnames(data), fixed = TRUE) |
+                         grepl('std()', colnames(data), fixed = TRUE)])
     
     ## Create descriptive activity names
     for (i in 1:nrow(labels)) {
