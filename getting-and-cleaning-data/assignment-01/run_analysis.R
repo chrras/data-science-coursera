@@ -1,5 +1,10 @@
 run_analysis <- function() {
-
+    
+    ## The function merge the Samsung accelerometer training and test data, and
+    ## clean it. The function returns a data frame consisting of the average
+    ## mean and std values for each subject and activity, which can be saved for
+    ## later use.
+    
     require(reshape2)
     require(dplyr)
     
