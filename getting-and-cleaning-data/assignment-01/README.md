@@ -20,7 +20,7 @@ The function loads the following files and merge or use them in order to clean t
 - y_test.txt
 - subject_test.txt
 
-Collumns NOT containing mean (mean()) or standard deviations (std()) are excluded from the merged data.
+Collumns NOT containing mean (_mean()_) or standard deviations (_std()_) are excluded from the merged data.
 
 The mean values of the means and standard deviations from the Samsung accelerometer is lastly returned for each activity and subject. See code-book.md for detailes on the different activities and subjects.
 
