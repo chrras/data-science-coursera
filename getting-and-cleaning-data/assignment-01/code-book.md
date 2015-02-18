@@ -1,79 +1,77 @@
 # Code Book – Samsung accelerometer data
 
 | **Variable name**	|	**Value**	|	**Description**|
-|	--------- 		|	---------		|	---------		|
-| subject 		| 1..30			| Subject number	|
-| activity		| laying			| Kind of activity	|
-| 			| sitting			| 			|
-| 			| standing		| 			|
-| 			| walking		| 			|
-| 			| walking_downstairs	| 			|
-| 			| walking_upstairs	| 			|
-
-activity		1
-tBodyAcc-mean()-X
-tBodyAcc-mean()-Y
-tBodyAcc-mean()-Z
-tBodyAcc-std()-X
-tBodyAcc-std()-Y
-tBodyAcc-std()-Z
-tGravityAcc-mean()-X
-tGravityAcc-mean()-Y
-tGravityAcc-mean()-Z
-tGravityAcc-std()-X
-tGravityAcc-std()-Y
-tGravityAcc-std()-Z
-tBodyAccJerk-mean()-X
-tBodyAccJerk-mean()-Y
-tBodyAccJerk-mean()-Z
-tBodyAccJerk-std()-X
-tBodyAccJerk-std()-Y
-tBodyAccJerk-std()-Z
-tBodyGyro-mean()-X
-tBodyGyro-mean()-Y
-tBodyGyro-mean()-Z
-tBodyGyro-std()-X
-tBodyGyro-std()-Y
-tBodyGyro-std()-Z
-tBodyGyroJerk-mean()-X
-tBodyGyroJerk-mean()-Y
-tBodyGyroJerk-mean()-Z
-tBodyGyroJerk-std()-X
-tBodyGyroJerk-std()-Y
-tBodyGyroJerk-std()-Z
-tBodyAccMag-mean()
-tBodyAccMag-std()
-tGravityAccMag-mean()
-tGravityAccMag-std()
-tBodyAccJerkMag-mean()
-tBodyAccJerkMag-std()
-tBodyGyroMag-mean()
-tBodyGyroMag-std()
-tBodyGyroJerkMag-mean()
-tBodyGyroJerkMag-std()
-fBodyAcc-mean()-X
-fBodyAcc-mean()-Y
-fBodyAcc-mean()-Z
-fBodyAcc-std()-X
-fBodyAcc-std()-Y
-fBodyAcc-std()-Z
-fBodyAccJerk-mean()-X
-fBodyAccJerk-mean()-Y
-fBodyAccJerk-mean()-Z
-fBodyAccJerk-std()-X
-fBodyAccJerk-std()-Y
-fBodyAccJerk-std()-Z
-fBodyGyro-mean()-X
-fBodyGyro-mean()-Y
-fBodyGyro-mean()-Z
-fBodyGyro-std()-X
-fBodyGyro-std()-Y
-fBodyGyro-std()-Z
-fBodyAccMag-mean()
-fBodyAccMag-std()
-fBodyBodyAccJerkMag-mean()
-fBodyBodyAccJerkMag-std()
-fBodyBodyGyroMag-mean()
-fBodyBodyGyroMag-std()
-fBodyBodyGyroJerkMag-mean()
-fBodyBodyGyroJerkMag-std()
+|:----------------------------	|:----------------------------|:-----------------------------|
+| subject 		| 1..30 (integer)	| Subject number	|
+| activity		| _laying_		| Kind of activity	|
+| 			| _sitting_		| 			|
+| 			| _standing_		| 			|
+| 			| _walking_		| 			|
+| 			| _walking_downstairs_| 			|
+| 			| _walking_upstairs_	| 			|
+tBodyAcc-mean()-X	| -1..1 (numeric) 	| Normalized measurement |
+tBodyAcc-mean()-Y	| -1..1 (numeric) 	| Normalized measurement |
+tBodyAcc-mean()-Z	| -1..1 (numeric) 	| Normalized measurement |
+tBodyAcc-std()-X	| -1..1 (numeric) 	| Normalized measurement |
+tBodyAcc-std()-Y	| -1..1 (numeric) 	| Normalized measurement |
+tBodyAcc-std()-Z	| -1..1 (numeric) 	| Normalized measurement |
+tGravityAcc-mean()-X	| -1..1 (numeric) 	| Normalized measurement |
+tGravityAcc-mean()-Y	| -1..1 (numeric) 	| Normalized measurement |
+tGravityAcc-mean()-Z	| -1..1 (numeric) 	| Normalized measurement |
+tGravityAcc-std()-X	| -1..1 (numeric) 	| Normalized measurement |
+tGravityAcc-std()-Y	| -1..1 (numeric) 	| Normalized measurement |
+tGravityAcc-std()-Z	| -1..1 (numeric) 	| Normalized measurement |
+tBodyAccJerk-mean()-X	| -1..1 (numeric) 	| Normalized measurement |
+tBodyAccJerk-mean()-Y	| -1..1 (numeric) 	| Normalized measurement |
+tBodyAccJerk-mean()-Z	| -1..1 (numeric) 	| Normalized measurement |
+tBodyAccJerk-std()-X	| -1..1 (numeric) 	| Normalized measurement |
+tBodyAccJerk-std()-Y	| -1..1 (numeric) 	| Normalized measurement |
+tBodyAccJerk-std()-Z	| -1..1 (numeric) 	| Normalized measurement |
+tBodyGyro-mean()-X	| -1..1 (numeric) 	| Normalized measurement |
+tBodyGyro-mean()-Y	| -1..1 (numeric) 	| Normalized measurement |
+tBodyGyro-mean()-Z	| -1..1 (numeric) 	| Normalized measurement |
+tBodyGyro-std()-X	| -1..1 (numeric) 	| Normalized measurement |
+tBodyGyro-std()-Y	| -1..1 (numeric) 	| Normalized measurement |
+tBodyGyro-std()-Z	| -1..1 (numeric) 	| Normalized measurement |
+tBodyGyroJerk-mean()-X	| -1..1 (numeric) 	| Normalized measurement |
+tBodyGyroJerk-mean()-Y	| -1..1 (numeric) 	| Normalized measurement |
+tBodyGyroJerk-mean()-Z	| -1..1 (numeric) 	| Normalized measurement |
+tBodyGyroJerk-std()-X	| -1..1 (numeric) 	| Normalized measurement |
+tBodyGyroJerk-std()-Y	| -1..1 (numeric) 	| Normalized measurement |
+tBodyGyroJerk-std()-Z	| -1..1 (numeric) 	| Normalized measurement |
+tBodyAccMag-mean()	| -1..1 (numeric) 	| Normalized measurement |
+tBodyAccMag-std()	| -1..1 (numeric) 	| Normalized measurement |
+tGravityAccMag-mean()	| -1..1 (numeric) 	| Normalized measurement |
+tGravityAccMag-std()	| -1..1 (numeric) 	| Normalized measurement |
+tBodyAccJerkMag-mean()	| -1..1 (numeric) 	| Normalized measurement |
+tBodyAccJerkMag-std()	| -1..1 (numeric) 	| Normalized measurement |
+tBodyGyroMag-mean()	| -1..1 (numeric) 	| Normalized measurement |
+tBodyGyroMag-std()	| -1..1 (numeric) 	| Normalized measurement |
+tBodyGyroJerkMag-mean()	| -1..1 (numeric) 	| Normalized measurement |
+tBodyGyroJerkMag-std()	| -1..1 (numeric) 	| Normalized measurement |
+fBodyAcc-mean()-X	| -1..1 (numeric) 	| Normalized measurement |
+fBodyAcc-mean()-Y	| -1..1 (numeric) 	| Normalized measurement |
+fBodyAcc-mean()-Z	| -1..1 (numeric) 	| Normalized measurement |
+fBodyAcc-std()-X	| -1..1 (numeric) 	| Normalized measurement |
+fBodyAcc-std()-Y	| -1..1 (numeric) 	| Normalized measurement |
+fBodyAcc-std()-Z	| -1..1 (numeric) 	| Normalized measurement |
+fBodyAccJerk-mean()-X	| -1..1 (numeric) 	| Normalized measurement |
+fBodyAccJerk-mean()-Y	| -1..1 (numeric) 	| Normalized measurement |
+fBodyAccJerk-mean()-Z	| -1..1 (numeric) 	| Normalized measurement |
+fBodyAccJerk-std()-X	| -1..1 (numeric) 	| Normalized measurement |
+fBodyAccJerk-std()-Y	| -1..1 (numeric) 	| Normalized measurement |
+fBodyAccJerk-std()-Z	| -1..1 (numeric) 	| Normalized measurement |
+fBodyGyro-mean()-X	| -1..1 (numeric) 	| Normalized measurement |
+fBodyGyro-mean()-Y	| -1..1 (numeric) 	| Normalized measurement |
+fBodyGyro-mean()-Z	| -1..1 (numeric) 	| Normalized measurement |
+fBodyGyro-std()-X	| -1..1 (numeric) 	| Normalized measurement |
+fBodyGyro-std()-Y	| -1..1 (numeric) 	| Normalized measurement |
+fBodyGyro-std()-Z	| -1..1 (numeric) 	| Normalized measurement |
+fBodyAccMag-mean()	| -1..1 (numeric) 	| Normalized measurement |
+fBodyAccMag-std()	| -1..1 (numeric) 	| Normalized measurement |
+fBodyBodyAccJerkMag-mean()	| -1..1 (numeric) 	| Normalized measurement |
+fBodyBodyAccJerkMag-std()	| -1..1 (numeric) 	| Normalized measurement |
+fBodyBodyGyroMag-mean()	| -1..1 (numeric) 	| Normalized measurement |
+fBodyBodyGyroMag-std()	| -1..1 (numeric) 	| Normalized measurement |
+fBodyBodyGyroJerkMag-mean()	| -1..1 (numeric) 	| Normalized measurement |
+fBodyBodyGyroJerkMag-std()	| -1..1 (numeric) 	| Normalized measurement |
