@@ -1,9 +1,15 @@
-# Code Book
-## Samsung accelerometer data
+# Code Book – Samsung accelerometer data
 
-**Variable**	**Value**	**Description**
-subject		1
-	1..30	.Subject number
+| **Variable name**	|	**Value**	|	**Description**|
+|	--------- 		|	---------		|	---------		|
+| subject 		| 1..30			| Subject number	|
+| activity		| laying			| Kind of activity	|
+| 			| sitting			| 			|
+| 			| standing		| 			|
+| 			| walking		| 			|
+| 			| walking_downstairs	| 			|
+| 			| walking_upstairs	| 			|
+
 activity		1
 tBodyAcc-mean()-X
 tBodyAcc-mean()-Y
