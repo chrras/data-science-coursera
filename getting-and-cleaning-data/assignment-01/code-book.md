@@ -1,14 +1,14 @@
-# Code Book – Samsung accelerometer data
+## Code Book – Samsung accelerometer data
 
 | **Variable name**	|	**Value**	|	**Description**|
 |:----------------------------	|:----------------------------|:-----------------------------|
 | subject 		| 1..30 (integer)	| Subject number	|
-| activity		| _laying_		| Kind of activity	|
-| 			| _sitting_		| 			|
-| 			| _standing_		| 			|
-| 			| _walking_		| 			|
-| 			| _walking_downstairs_| 			|
-| 			| _walking_upstairs_	| 			|
+| activity		| laying			| Kind of activity	|
+| 			| sitting			| 			|
+| 			| standing		| 			|
+| 			| walking		| 			|
+| 			| walking_downstairs| 		|
+| 			| walking_upstairs	| 			|
 tBodyAcc-mean()-X	| -1..1 (numeric) 	| Normalized measurement |
 tBodyAcc-mean()-Y	| -1..1 (numeric) 	| Normalized measurement |
 tBodyAcc-mean()-Z	| -1..1 (numeric) 	| Normalized measurement |
