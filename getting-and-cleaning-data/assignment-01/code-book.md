@@ -35,5 +35,5 @@ The set of variables that were estimated from these signals are:
 
 In addition, the following two parametes is included in the tidy_means.txt file:
 
-- subject: a integer between 1 and 30 representing the number to the subject/test person.
+- subject: an integer between 1 and 30 representing the number to the subject/test person.
 - activity: a string indication the activity of the subject. The activities includes: _laying_, _sitting_, _standing_, _walking_, _walking_downstairs_, _walking_upstairs_.
