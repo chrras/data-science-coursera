@@ -3,8 +3,6 @@ run_analysis <- function() {
     require(reshape2)
     require(dplyr)
     
-    setwd('data-gitignore')
-    
     ## Load header and activity labels
     header <- read.table('features.txt', colClasses = 'character')
     labels <- read.table('activity_labels.txt', colClasses = 'character')
@@ -41,8 +39,6 @@ run_analysis <- function() {
     data_melt <- melt(data, id.vars = c("subject", "activity", "case"))
     data_cast <- dcast(data_melt, subject + activity ~ variable, mean)
     data_cast <- arrange(data_cast, activity, subject)
-    
-    setwd('..')
     
     return(data_cast)
 }
