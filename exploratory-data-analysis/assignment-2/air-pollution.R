@@ -73,3 +73,25 @@ ggplot(data = yearlyEmission, aes(x = Year, y = Emission)) +
     facet_grid(. ~ Type) +
     labs(title = "Development of PM2.5 emission over time in Baltimore City\n by type of source\n") +
     theme_bw(base_size = 14)
+
+## Task 4 ----
+
+CoalComb <- filter(SCC, grepl("[Cc]omb",Short.Name) & grepl("[Cc]oal", Short.Name))
+CoalCombCombined <- merge(CoalComb, NEI, by.x = "SCC", by.y = "SCC")
+
+yearlyCoalEmission <- aggregate(CoalCombCombined$Emissions, by = list(CoalCombCombined$year), FUN = sum)
+colnames(yearlyCoalEmission) <- c('Year', 'Emission')
+yearlyCoalEmission$Emission <- yearlyCoalEmission$Emission / 1000000
+
+## Plot PM2.5 emission development
+par(mar = c(4,5,3,2))
+plot(yearlyCoalEmission,
+     type = 'o',
+     pch = 16,
+     ylim = c(0, 0.6),
+     ylab = expression(paste(PM[2.5], "coal emission [", 10^6, " tons]")),
+     frame.plot = F,
+     xaxt='n',
+     main = expression(paste("Development of ", PM[2.5], " coal emission over time in the US")))
+axis(side=1, at=c(1999, 2002, 2005, 2008))
+
