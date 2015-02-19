@@ -76,9 +76,11 @@ ggplot(data = yearlyEmission, aes(x = Year, y = Emission)) +
 
 ## Task 4 ----
 
+## Filter data
 CoalComb <- filter(SCC, grepl("[Cc]omb",Short.Name) & grepl("[Cc]oal", Short.Name))
 CoalCombCombined <- merge(CoalComb, NEI, by.x = "SCC", by.y = "SCC")
 
+## Aggregate data
 yearlyCoalEmission <- aggregate(CoalCombCombined$Emissions, by = list(CoalCombCombined$year), FUN = sum)
 colnames(yearlyCoalEmission) <- c('Year', 'Emission')
 yearlyCoalEmission$Emission <- yearlyCoalEmission$Emission / 1000000
@@ -95,3 +97,23 @@ plot(yearlyCoalEmission,
      main = expression(paste("Development of ", PM[2.5], " coal emission over time in the US")))
 axis(side=1, at=c(1999, 2002, 2005, 2008))
 
+## Task 5 ----
+
+## Aggregate data
+
+NEI_Baltimore <- filter(NEI, fips == "24510", type == 'ON-ROAD')
+yearlyEmission <- aggregate(NEI_Baltimore$Emission, by = list(NEI_Baltimore$year), FUN = sum)
+colnames(yearlyEmission) <- c('Year', 'Emission')
+yearlyEmission$Emission <- yearlyEmission$Emission / 1000
+
+## Plot PM2.5 emission development in Baltimore Ciry
+par(mar = c(4,5,3,2))
+plot(yearlyEmission,
+     type = 'o',
+     pch = 16,
+     ylim = c(0, 0.4),
+     ylab = expression(paste(PM[2.5], " motor vehicle emission [", 10^3, " tons]")),
+     frame.plot = F,
+     xaxt='n',
+     main = expression(paste("Development of ", PM[2.5], " motor vehicle emission over time in Baltimore City")))
+axis(side=1, at=c(1999, 2002, 2005, 2008))
