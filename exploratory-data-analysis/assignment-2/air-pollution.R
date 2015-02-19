@@ -72,19 +72,4 @@ ggplot(data = yearlyEmission, aes(x = Year, y = Emission)) +
     ylab(expression(paste(PM[2.5], " emission [", 10^3, " tons]"))) +
     facet_grid(. ~ Type) +
     labs(title = "Development of PM2.5 emission over time in Baltimore City\n by type of source\n") +
-    theme_bw()
-    
-
-
-par(mar = c(4,5,3,2))
-plot(yearlyEmission,
-     type = 'o',
-     pch = 16,
-     ylim = c(0, 4),
-     ylab = expression(paste(PM[2.5], " emission [", 10^3, " tons]")),
-     frame.plot = F,
-     xaxt='n',
-     main = expression(paste("Development of ", PM[2.5], " emission over time in Baltimore City")))
-axis(side=1, at=c(1999, 2002, 2005, 2008))
-
-
+    theme_bw(base_size = 14)
